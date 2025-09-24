@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Ecommerce Mi Tiendita - Ropa y calzado de moda">
+  <title>Mi Tiendita - Moda y Estilo</title>
+  <link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+  <!-- Overlay -->
+  <div class="overlay" id="overlay"></div>
+
+  <header class="header">
+    <button class="header__menu-toggle" id="menuToggle" aria-label="Abrir menú">
+      <!-- menú hamburguesa -->
+      <svg class="header__menu-icon" viewBox="0 0 24 24" width="24" height="24">
+        <path fill="currentColor" d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+      </svg>
+    </button>
+    
+    <h1 class="header__title">Mi Tiendita</h1>
+    
+    <div class="header__cart" id="cartIcon">
+      <!-- Ícono carrito -->
+      <svg class="header__cart-icon" viewBox="0 0 24 24" width="24" height="24">
+        <path fill="currentColor" d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
+      </svg>
+      <span id="cartCount" class="header__cart-badge">0</span>
+    </div>
+  </header>
+
+  <!-- Menú Lateral -->
+  <nav class="side-menu" id="sideMenu">
+    <div class="side-menu__header">
+      <h2 class="side-menu__title">Menú Principal</h2>
+      <button id="closeMenu" class="side-menu__close-btn" aria-label="Cerrar menú">
+        <i class="fas fa-times"></i> Cerrar
+      </button>
+    </div>
+    
+    <div class="side-menu__content">
+      <ul class="side-menu__list">
+        <li class="side-menu__item">
+          <a href="#" class="side-menu__link">
+            <i class="fas fa-home"></i> Inicio
+          </a>
+        </li>
+        <li class="side-menu__item">
+          <a href="#" class="side-menu__link">
+            <i class="fas fa-tshirt"></i> Ropa
+          </a>
+        </li>
+        <li class="side-menu__item">
+          <a href="#" class="side-menu__link">
+            <i class="fas fa-shoe-prints"></i> Calzado
+          </a>
+        </li>
+        <li class="side-menu__item">
+          <a href="#" class="side-menu__link">
+            <i class="fas fa-tag"></i> Ofertas
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Carrito Lateral -->
+  <aside class="cart" id="cartSidebar">
+    <div class="cart__header">
+      <h2 class="cart__title"><i class="fas fa-shopping-cart"></i> Mi Carrito</h2>
+      <button id="closeCart" class="cart__close-btn" aria-label="Cerrar carrito">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    
+    <div class="cart__content">
+      <div id="emptyCart" class="cart__empty">
+        <i class="fas fa-shopping-cart"></i>
+        <p>Tu carrito está vacío</p>
+      </div>
+      <ul id="cartItems" class="cart__items"></ul>
+    </div>
+    
+    <div class="cart__footer">
+      <div class="cart__total">
+        <strong>Total: $<span id="cartTotal">0.00</span></strong>
+      </div>
+      <button id="buyBtn" class="cart__buy-btn">
+        <i class="fas fa-check"></i> Finalizar Compra
+      </button>
+    </div>
+  </aside>
+
+  <main class="main">
+    <section class="products">
+      <h2 class="products__title">Nuestra Colección</h2>
+      
+      <div class="products__grid">
+        <!-- Camiseta -->
+        <article class="product" data-id="1" data-name="Camiseta Básica" data-price="25">
+          <img class="product__image" src="img/camiseta.jpg" alt="Camiseta Básica">
+          <div class="product__content">
+            <h3 class="product__title">Camiseta Básica</h3>
+            <p class="product__price">$25.00</p>
+            <button class="product__button add-to-cart-btn">
+              <i class="fas fa-cart-plus"></i> Agregar al carrito
+            </button>
+          </div>
+        </article>
+
+        <!-- Chaqueta -->
+        <article class="product" data-id="2" data-name="Chaqueta Demian" data-price="89">
+          <img class="product__image" src="img/chaqueta.jpg" alt="Chaqueta Denim">
+          <div class="product__content">
+            <h3 class="product__title">Chaqueta Demian</h3>
+            <p class="product__price">$89.00</p>
+            <button class="product__button add-to-cart-btn">
+              <i class="fas fa-cart-plus"></i> Agregar al carrito
+            </button>
+          </div>
+        </article>
+
+        <!-- Gorra -->
+        <article class="product" data-id="3" data-name="Gorra Deportiva" data-price="19">
+          <img class="product__image" src="img/gorra.webp" alt="Gorra Deportiva">
+          <div class="product__content">
+            <h3 class="product__title">Gorra Deportiva</h3>
+            <p class="product__price">$19.00</p>
+            <button class="product__button add-to-cart-btn">
+              <i class="fas fa-cart-plus"></i> Agregar al carrito
+            </button>
+          </div>
+        </article>
+
+        <!-- Pantalón -->
+        <article class="product" data-id="4" data-name="Pantalón Jeans" data-price="59">
+          <img class="product__image" src="img/pantalon.webp" alt="Pantalón Jeans">
+          <div class="product__content">
+            <h3 class="product__title">Pantalón Jeans</h3>
+            <p class="product__price">$59.00</p>
+            <button class="product__button add-to-cart-btn">
+              <i class="fas fa-cart-plus"></i> Agregar al carrito
+            </button>
+          </div>
+        </article>
+
+        <!-- Sudadera -->
+        <article class="product" data-id="5" data-name="Sudadera con Capucha" data-price="45">
+          <img class="product__image" src="img/sudadera.jpg" alt="Sudadera con Capucha">
+          <div class="product__content">
+            <h3 class="product__title">Sudadera con Capucha</h3>
+            <p class="product__price">$45.00</p>
+            <button class="product__button add-to-cart-btn">
+              <i class="fas fa-cart-plus"></i> Agregar al carrito
+            </button>
+          </div>
+        </article>
+
+        <!-- Tennis -->
+        <article class="product" data-id="6" data-name="Tennis Deportivos" data-price="75">
+          <img class="product__image" src="img/tennis.webp" alt="Tennis Deportivos">
+          <div class="product__content">
+            <h3 class="product__title">Tennis Deportivos</h3>
+            <p class="product__price">$75.00</p>
+            <button class="product__button add-to-cart-btn">
+              <i class="fas fa-cart-plus"></i> Agregar al carrito
+            </button>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__content">
+      <p class="footer__text">&copy; 2024 Mi Tiendita. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
